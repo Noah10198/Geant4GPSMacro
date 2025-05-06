@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1144</width>
-    <height>595</height>
+    <width>1415</width>
+    <height>624</height>
    </rect>
   </property>
   <property name="font">
@@ -24,7 +24,7 @@
     <rect>
      <x>30</x>
      <y>20</y>
-     <width>563</width>
+     <width>641</width>
      <height>549</height>
     </rect>
    </property>
@@ -36,7 +36,7 @@
      <rect>
       <x>9</x>
       <y>29</y>
-      <width>554</width>
+      <width>621</width>
       <height>491</height>
      </rect>
     </property>
@@ -77,31 +77,37 @@
            <property name="prefix">
             <string/>
            </property>
+           <property name="suffix">
+            <string/>
+           </property>
            <property name="decimals">
-            <number>4</number>
+            <number>1</number>
+           </property>
+           <property name="minimum">
+            <double>1.000000000000000</double>
            </property>
            <property name="maximum">
-            <double>99999999.000000000000000</double>
+            <double>100.000000000000000</double>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QDoubleSpinBox" name="ParticleDirY">
            <property name="decimals">
-            <number>4</number>
+            <number>1</number>
            </property>
            <property name="maximum">
-            <double>99999999.000000000000000</double>
+            <double>100.000000000000000</double>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QDoubleSpinBox" name="ParticleDirZ">
            <property name="decimals">
-            <number>4</number>
+            <number>1</number>
            </property>
            <property name="maximum">
-            <double>99999999.000000000000000</double>
+            <double>100.000000000000000</double>
            </property>
           </widget>
          </item>
@@ -117,9 +123,12 @@
           </widget>
          </item>
          <item>
-          <widget class="QDoubleSpinBox" name="doubleSpinBox">
+          <widget class="QDoubleSpinBox" name="ParticleEnergy">
            <property name="decimals">
-            <number>4</number>
+            <number>3</number>
+           </property>
+           <property name="minimum">
+            <double>1.000000000000000</double>
            </property>
            <property name="maximum">
             <double>99999999.000000000000000</double>
@@ -127,7 +136,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="comboBox">
+          <widget class="QComboBox" name="ParticleEnergyUnit">
            <item>
             <property name="text">
              <string>MeV</string>
@@ -167,7 +176,10 @@
           </widget>
          </item>
          <item>
-          <widget class="QDoubleSpinBox" name="doubleSpinBox_7">
+          <widget class="QDoubleSpinBox" name="ParticlePosX">
+           <property name="suffix">
+            <string> cm</string>
+           </property>
            <property name="decimals">
             <number>4</number>
            </property>
@@ -177,7 +189,10 @@
           </widget>
          </item>
          <item>
-          <widget class="QDoubleSpinBox" name="doubleSpinBox_8">
+          <widget class="QDoubleSpinBox" name="ParticlePosY">
+           <property name="suffix">
+            <string> cm</string>
+           </property>
            <property name="decimals">
             <number>4</number>
            </property>
@@ -187,7 +202,10 @@
           </widget>
          </item>
          <item>
-          <widget class="QDoubleSpinBox" name="doubleSpinBox_9">
+          <widget class="QDoubleSpinBox" name="ParticlePosZ">
+           <property name="suffix">
+            <string> cm</string>
+           </property>
            <property name="decimals">
             <number>4</number>
            </property>
@@ -222,7 +240,7 @@
         <number>9</number>
        </property>
        <item row="0" column="0">
-        <widget class="QRadioButton" name="source_ParticleType">
+        <widget class="QRadioButton" name="ParticleNameNormal">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -235,10 +253,13 @@
          <property name="text">
           <string>Normal</string>
          </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QComboBox" name="comboBox_2">
+        <widget class="QComboBox" name="ParticleName_2">
          <item>
           <property name="text">
            <string>gamma</string>
@@ -272,7 +293,7 @@
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QRadioButton" name="source_ParticleTypeCustom">
+        <widget class="QRadioButton" name="ParticleNameIon">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -288,7 +309,7 @@
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QLabel" name="label_31">
+        <widget class="QLabel" name="atomicNumZ">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -301,7 +322,7 @@
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QSpinBox" name="source_atomNumber">
+        <widget class="QSpinBox" name="source_atomNumZ">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -314,72 +335,54 @@
     selection-color: #0a214c; 				/*被选中时候的颜色*/
     selection-background-color: #0e73f2;			/*被选中时候背景的颜色*/</string>
          </property>
+         <property name="minimum">
+          <number>1</number>
+         </property>
          <property name="maximum">
-          <number>99999</number>
+          <number>200</number>
          </property>
         </widget>
        </item>
        <item row="3" column="0">
-        <widget class="QLabel" name="label_32">
+        <widget class="QLabel" name="atomicMassA">
          <property name="text">
           <string>atomic mass A</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
-        <widget class="QSpinBox" name="source_atomQuality">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color:transparent;
-    background-color: #eaeef1;               		/*背景颜色*/
-    selection-color: #0a214c; 				/*被选中时候的颜色*/
-    selection-background-color: #0e73f2;			/*被选中时候背景的颜色*/</string>
-         </property>
-         <property name="maximum">
-          <number>99999</number>
-         </property>
-        </widget>
-       </item>
        <item row="4" column="0">
-        <widget class="QLabel" name="label_33">
+        <widget class="QLabel" name="IonicCharge">
          <property name="text">
           <string>ionic charge Q</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
-        <widget class="QSpinBox" name="source_atomElectric">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color:transparent;
-    background-color: #eaeef1;               		/*背景颜色*/
-    selection-color: #0a214c; 				/*被选中时候的颜色*/
-    selection-background-color: #0e73f2;			/*被选中时候背景的颜色*/</string>
-         </property>
-         <property name="maximum">
-          <number>99999</number>
-         </property>
-        </widget>
-       </item>
        <item row="5" column="0">
-        <widget class="QLabel" name="label_34">
+        <widget class="QLabel" name="excitation">
          <property name="text">
           <string>excitation energy E</string>
          </property>
         </widget>
        </item>
+       <item row="3" column="1">
+        <widget class="QDoubleSpinBox" name="source_atomMass">
+         <property name="minimum">
+          <double>1.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>400.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QDoubleSpinBox" name="source_atomChargeQ">
+         <property name="maximum">
+          <double>400.000000000000000</double>
+         </property>
+        </widget>
+       </item>
        <item row="5" column="1">
-        <widget class="QSpinBox" name="source_arouseEnergy">
+        <widget class="QSpinBox" name="source_arouseExcitation">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -393,7 +396,7 @@
     selection-background-color: #0e73f2;			/*被选中时候背景的颜色*/</string>
          </property>
          <property name="maximum">
-          <number>99999</number>
+          <number>9</number>
          </property>
         </widget>
        </item>
@@ -456,10 +459,10 @@
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>620</x>
-     <y>30</y>
+     <x>710</x>
+     <y>20</y>
      <width>501</width>
-     <height>541</height>
+     <height>551</height>
     </rect>
    </property>
    <property name="title">
@@ -471,7 +474,7 @@
       <x>20</x>
       <y>30</y>
       <width>461</width>
-      <height>481</height>
+      <height>491</height>
      </rect>
     </property>
    </widget>

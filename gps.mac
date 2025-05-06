@@ -1,6 +1,11 @@
 # out source mac script
-/gps/List
+# List block
 
+# Paticle Name block
+/gps/particle 
+# Paticle Position block
+/gps/direction 2.0 0.0 0.0 
+# Paticle Direction block
 
-
+# Paticle Direction block
 
